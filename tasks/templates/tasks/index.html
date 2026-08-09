@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Task Manager</title>
+<link rel="stylesheet" href="{% static 'tasks/css/style.css' %}">
+</head>
+<body>
+
+<div class="app">
+  <header class="app-header">
+    <h1>📋 Task Manager</h1>
+    <p>Django (APIView) + PostgreSQL + Vanilla JS</p>
+  </header>
+
+  <section class="task-form-card">
+    <h2>Add a new task</h2>
+    <form id="task-form">
+      <div class="form-row">
+        <input type="text" id="title" placeholder="Task title" required>
+      </div>
+      <div class="form-row">
+        <textarea id="description" placeholder="Description (optional)"></textarea>
+      </div>
+      <div class="form-row form-row-inline">
+        <select id="priority">
+          <option value="low">Low priority</option>
+          <option value="medium" selected>Medium priority</option>
+          <option value="high">High priority</option>
+        </select>
+        <input type="date" id="due_date">
+        <button type="submit">Add Task</button>
+      </div>
+    </form>
+  </section>
+
+  <section class="filters">
+    <button class="filter-btn active" data-status="">All</button>
+    <button class="filter-btn" data-status="pending">Pending</button>
+    <button class="filter-btn" data-status="in_progress">In Progress</button>
+    <button class="filter-btn" data-status="completed">Completed</button>
+  </section>
+
+  <section id="task-list" class="task-list">
+    <p class="empty-msg" id="empty-msg">Loading tasks…</p>
+  </section>
+</div>
+
+<script src="{% static 'tasks/js/script.js' %}"></script>
+</body>
+</html>
