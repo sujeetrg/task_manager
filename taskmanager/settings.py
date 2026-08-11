@@ -17,9 +17,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'rest_framework',   # <-- needed for APIView
-
-    'tasks',
+    'rest_framework',
+    
+    'tasks'
 ]
 
 MIDDLEWARE = [
